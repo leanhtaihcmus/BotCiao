@@ -116,11 +116,11 @@ function verifyRequestSignature(req, res, buf) {
 function receivedMessage(event) {
 
   var senderID = event.sender.id;
-  var receipientID = event.receipient.id;
+  var recipientID = event.recipient.id;
   var timeOfMessage = event.timestamp;
   var message = event.message;
 
-  console.log("Received message for user %d and page %d at %d with message: ", senderID, receipientID, timeOfMessage);
+  console.log("Received message for user %d and page %d at %d with message: ", senderID, recipientID, timeOfMessage);
   console.log(JSON.stringify(message));
 
   var messageID = message.id;
@@ -144,14 +144,14 @@ function receivedMessage(event) {
 }
 
 // Handle for generic message
-function sendGenerecMessage(receipientId, messageText) {
+function sendGenerecMessage(recipientId, messageText) {
 
 }
 
-function sendTextMessage(receipientId, messageText) {
+function sendTextMessage(recipientId, messageText) {
   var messageData = {
-    receipient: {
-      id: receipientId
+    recipient: {
+      id: recipientId
     },
     message: {
       text: messageText
@@ -169,10 +169,10 @@ function callSendAPI(messageData) {
     json: messageData
   }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      var receipientId = body.receipient_id;
+      var recipientId = body.recipient_id;
       var messageId = body.message_id;
       
-      console.log("Sucsessfully sent generic message with id %s to receipient %s", messageId, receipientId);
+      console.log("Sucsessfully sent generic message with id %s to recipient %s", messageId, recipientId);
     } else {
       console.error("Unable to send message");
       console.error(response);
