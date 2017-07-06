@@ -146,6 +146,51 @@ function receivedMessage(event) {
 // Handle for generic message
 function sendGenericMessage(recipientId, messageText) {
   console.log("Sucsessfully sent generic message with id to recipient");
+
+  var messageData = {
+    recipient: {
+      id: recipientId
+    },
+    message: {
+      attachment: {
+        type: "template",
+        payload: {
+          template_type: "generic",
+          elements: [{
+            title: "rif",
+            subtitle: "Next-generation virtual reality",
+            item_url: "https://www.oculus.com/en-us/rift/",
+            image_url: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/4932/4932000_rd.jpg;maxHeight=550;maxWidth=642",
+            buttons: [{
+              type: "web_url",
+              url: "http://www.bestbuy.com/site/oculus-rift-headset-for-compatible-windows-pcs-black/4932000.p?skuId=4932000",
+              title: "Buy It"
+            }, {
+              type: "postback",
+              title: "call Postback",
+              payload: "Payload for first buddle"
+            }]
+          }, {
+            title: "touch",
+            subtitle: "Your Hands, Now in VR",
+            item_url: "https://www.oculus.com/en-us/touch/",
+            image_url: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5587/5587706_sd.jpg;maxHeight=550;maxWidth=642",
+            buttons: [{
+              type: "web_url",
+              url: "http://www.bestbuy.com/site/oculus-touch/5587706.p?skuId=5587706",
+              title: "Buy It"
+            }, {
+              type: "postback",
+              title: "Call Postback",
+              payload: "Payload for second buddle"
+            }]
+          }]
+        }
+      }
+    }
+  };
+
+  callSendAPI(messageData);
 }
 
 function sendTextMessage(recipientId, messageText) {
