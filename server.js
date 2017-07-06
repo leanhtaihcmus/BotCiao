@@ -132,7 +132,7 @@ function receivedMessage(event) {
     // and send back the example. Otherwise, just echo the text we received.
     switch(messageText) {
       case 'generic':
-        sendGenericMesseage(senderID);
+        sendGenericMessage(senderID);
         break;
       
       default:
@@ -144,8 +144,8 @@ function receivedMessage(event) {
 }
 
 // Handle for generic message
-function sendGenerecMessage(recipientId, messageText) {
-
+function sendGenericMessage(recipientId, messageText) {
+  console.log("Sucsessfully sent generic message with id to recipient");
 }
 
 function sendTextMessage(recipientId, messageText) {
