@@ -1,0 +1,6 @@
+{
+    "appSecret": "c9afe7fb416e75a4c408720084dcb360",
+    "pageAccessToken": "EAAbYmS2kCQ4BAIqJcZAqEG2Dv3IxPhhtDl2MFX2HZASX52eDJFO5ZAe6sZC7wPZBjEB6hCyAxSM6KcLm0uEvQQnbaYMVaAxku61jHIzZBjSZC7h7Y3igKXCBlKfcxUfcm175fzPo4o5PTZAdBSNK4ETmZCKxyKfETZAyBoO7AgIEBU8oONc0n7COZAd",
+    "validationToken": "my_voice_is_my_password_verify_me",
+    "serverURL": "http://localhost:3000"
+}
